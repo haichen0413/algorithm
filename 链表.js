@@ -31,6 +31,28 @@ class LinkNodeList {
     this.length += 1;
   }
 
+  remove(index) {
+    // 你的上一个节点指向下一个节点，把自己的下一个节点取消
+    let cur = this.head;
+    let pre;
+    let i = 0;
+    if (index === 0) {
+      // 删除第一项
+      this.head = cur.next;
+    } else {
+      while (i < index) {
+        // 上一个和当前都要保存
+        pre = cur;
+        cur = cur.next;
+        i++;
+      }
+      pre.next = cur.next;
+      cur.next = null;
+    }
+    this.length -= 1;
+    return cur.element;
+  }
+
   print() {
     let cur = this.head;
     let ret = [];
