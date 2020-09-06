@@ -21,9 +21,7 @@ var exist = function(board, word) {
     for (let j = 0; j < col; j++) {
       // 单词的位置和索引作为参数
       const res = find(i, j, 0);
-      if (res) {
-        return true;
-      }
+      if (res) return true;
     }
   }
   return false;
