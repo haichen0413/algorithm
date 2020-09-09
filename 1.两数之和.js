@@ -10,3 +10,7 @@ var twoSum = (nums, target) => {
     obj[target - num] = i;
   }
 };
+
+var twoSum = (nums, target) => {
+  // 空间换时间
+};
